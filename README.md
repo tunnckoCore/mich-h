@@ -67,6 +67,33 @@ const tree = h('div#page',
 console.log(tree)
 ```
 
+Or using it with modern JSX syntax, adding [JSX Pragma](https://jasonformat.com/wtf-is-jsx/)
+
+```jsx
+/** @jsx h */
+const h = require('mich-h')
+
+const tree = <div id="page">
+  <div id="header">
+    <h1 class="classy" style="background-color: #333; color: purple"></h1>
+  </div>
+  <nav id="menu" style="background: #2f2;">
+    <ul>
+      <li>one</li>
+      <li class="sec">two</li>
+      <li>three</li>
+    </ul>
+  </nav>
+  <h2 id="title" style="background-color: red;">content title</h2>
+  <p class="first foobie quxie">so it's just like a templating engine,
+  but easy to use inline with javascript</p>
+  <p>the intention is for this to be usedto create <strong>charlike</strong>
+  reusable, interactive html widgets.</p>
+</div>
+
+console.log(tree)
+```
+
 ## API
 
 ## Related
