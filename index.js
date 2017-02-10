@@ -65,6 +65,7 @@ function addProperty (props, key, value) {
     key = transform[key]
   }
   if (key === 'className') {
+    value = value.split ? value.split(' ') : value
     props[key] = arrayify(props[key]).concat(value)
   } else {
     props[key] = value
