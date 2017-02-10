@@ -18,7 +18,7 @@ module.exports = function michH (selector, properties, children) {
       arg.forEach(function (val) {
         addChild(node.children, val)
       })
-    } else if (typeof arg === 'object' && !('type' in arg)) {
+    } else if (arg && typeof arg === 'object' && !('type' in arg)) {
       for (var prop in arg) {
         addProperty(node.properties, prop, arg[prop])
       }
