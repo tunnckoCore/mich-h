@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.2"></a>
+## [0.2.2](https://github.com/tunnckocore/mich-h/compare/v0.2.1...v0.2.2) (2017-02-10)
+
+
+### Bug Fixes
+
+* **chore:** include .gz in dist ([935b36d](https://github.com/tunnckocore/mich-h/commit/935b36d))
+* **typeof:** invalid typeof comparison value, thanks [@codeclimate](https://github.com/codeclimate) ([762ab2d](https://github.com/tunnckocore/mich-h/commit/762ab2d))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/tunnckocore/mich-h/compare/v0.2.0...v0.2.1) (2017-02-10)
 
