@@ -10,7 +10,9 @@
 var parseSelector = require('mich-parse-selector')
 
 module.exports = function michH (selector, properties, children) {
-  var node = parseSelector(selector)
+  var component = typeof selector === 'function'
+  var node = component ? parseSelector() : parseSelector(selector)
+
   var args = [].slice.call(arguments, 1)
 
   function item (arg) {
@@ -31,7 +33,7 @@ module.exports = function michH (selector, properties, children) {
     item(args.shift())
   }
 
-  return node
+  return component ? selector(node.properties, node.children) : node
 }
 
 function addChild (nodes, children) {
