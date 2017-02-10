@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/tunnckocore/mich-h/compare/v0.1.7...v0.2.0) (2017-02-10)
+
+
+### Bug Fixes
+
+* **className:** split by space if a string ([19c0153](https://github.com/tunnckocore/mich-h/commit/19c0153))
+
+
+### Features
+
+* **transforms:** remove transforming of class->className and etc ([855b731](https://github.com/tunnckocore/mich-h/commit/855b731))
+
+
+
 <a name="0.1.7"></a>
 ## [0.1.7](https://github.com/tunnckocore/mich-h/compare/v0.1.6...v0.1.7) (2017-02-10)
 
