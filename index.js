@@ -45,12 +45,6 @@ function addChild (nodes, children) {
   nodes.push(children)
 }
 
-var transform = {
-  'class': 'className',
-  'for': 'htmlFor',
-  'http-equiv': 'httpEquiv'
-}
-
 function arrayify (val) {
   return !val ? [] : (Array.isArray(val) ? val : [val])
 }
@@ -61,11 +55,8 @@ function addProperty (props, key, value) {
       props.style[prop] = value[prop]
     }
   }
-  if (key in transform) {
-    key = transform[key]
-  }
   if (key === 'className') {
-    value = value.split ? value.split(' ') : value
+    value = typeof value === 'string' ? value.split(' ') : value
     props[key] = arrayify(props[key]).concat(value)
   } else {
     props[key] = value
