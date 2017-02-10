@@ -50,7 +50,7 @@ function arrayify (val) {
 }
 
 function addProperty (props, key, value) {
-  if (typeof key === 'style' && value && typeof value === 'object') {
+  if (key === 'style' && value && typeof value === 'object') {
     for (var prop in value) {
       props.style[prop] = value[prop]
     }
