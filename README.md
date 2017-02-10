@@ -1,6 +1,6 @@
 # mich-h [![NPM version](https://img.shields.io/npm/v/mich-h.svg?style=flat)](https://www.npmjs.com/package/mich-h) [![NPM monthly downloads](https://img.shields.io/npm/dm/mich-h.svg?style=flat)](https://npmjs.org/package/mich-h) [![npm total downloads][downloads-img]][downloads-url]
 
-> Create HAST-compliant virtual trees of HTML using [hyperscript][] compatible syntax, just in ~550 bytes.
+> Create [HAST](https://github.com/syntax-tree/hast)-compliant virtual trees of HTML using [hyperscript][] compatible syntax, just in ~550 bytes.
 
 [![codeclimate][codeclimate-img]][codeclimate-url] 
 [![codestyle][standard-img]][standard-url] 
@@ -9,7 +9,7 @@
 [![codecov][coverage-img]][coverage-url] 
 [![dependency status][david-img]][david-url]
 
-You might also be interested in [hyperscript](https://github.com/dominictarr/hyperscript).
+_You might also be interested in [hyperscript][] or the [HAST](https://github.com/syntax-tree/hast) alternative [hastscript][]. It may looks that `mich-h` is pretty similar - it's smaller and maybe not so perfect in some (edge) cases, but it's **enough** in most._
 
 ## Table of Contents
 - [Install](#install)
@@ -196,3 +196,4 @@ _Project scaffolded using [charlike][] cli._
 [standard-url]: https://github.com/feross/standard
 [standard-img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 
+[hastscript]: https://github.com/wooorm/hastscript
