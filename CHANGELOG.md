@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.3"></a>
+## [0.2.3](https://github.com/tunnckocore/mich-h/compare/v0.2.2...v0.2.3) (2017-02-10)
+
+
+### Bug Fixes
+
+* **docs:** upgrade docs with examples ([73698d9](https://github.com/tunnckocore/mich-h/commit/73698d9))
+* **readme:** CDN usage didn't appear in readme, haha ([023922d](https://github.com/tunnckocore/mich-h/commit/023922d))
+* **readme:** examples and readmes ([bbbcd03](https://github.com/tunnckocore/mich-h/commit/bbbcd03))
+* **readme:** tweak examples ([d77a0ba](https://github.com/tunnckocore/mich-h/commit/d77a0ba))
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/tunnckocore/mich-h/compare/v0.2.1...v0.2.2) (2017-02-10)
 
