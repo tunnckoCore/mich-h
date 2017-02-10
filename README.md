@@ -11,6 +11,8 @@
 
 _You might also be interested in [hyperscript][] or the [HAST](https://github.com/syntax-tree/hast) alternative [hastscript][]. It may looks that `mich-h` is pretty similar, but it's smaller and maybe not so perfect in some (edge) cases - it's **enough** in most, really._
 
+**[JSX CodePen Example](http://codepen.io/tunnckoCore/pen/xgQKzr?editors=0010)**
+
 ## Table of Contents
 - [Install](#install)
 - [Usage](#usage)
@@ -93,6 +95,8 @@ const tree = <div id="page">
 
 console.log(tree)
 ```
+
+**[JSX CodePen Example](http://codepen.io/tunnckoCore/pen/xgQKzr?editors=0010)**
 
 ## API
 
