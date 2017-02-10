@@ -1,6 +1,6 @@
 {
   "name": "mich-h",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Create HAST-compliant virtual trees of HTML using [hyperscript][] compatible syntax, just in ~550 bytes.",
   "repository": "tunnckoCore/mich-h",
   "author": "Charlike Mike Reagent <@tunnckoCore> (https://i.am.charlike.online)",
