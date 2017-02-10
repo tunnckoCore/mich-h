@@ -39,6 +39,18 @@ or install using [yarn](https://yarnpkg.com)
 $ yarn add mich-h
 ```
 
+Builds are also available on [unpkg](https://unpkg.com/) CDN
+
+```html
+<script src="https://unpkg.com/mich-h/dist/mich-h.min.js"></script>
+<script>
+  const h = michH
+  const node = h('h1', 'Hello World')
+  
+  console.log(node)
+</script>
+```
+
 ## Usage
 > For more use-cases see the [tests](test.js)
 
