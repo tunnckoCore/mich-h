@@ -23,12 +23,11 @@
     "build:bundle": "rollup -c",
     "build:show": "ls -al dist"
   },
-  "dependencies": {
-    "mich-parse-selector": "^1.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "commitizen": "^2.9.2",
     "cz-conventional-changelog": "^1.2.0",
+    "mich-parse-selector": "^1.0.2",
     "mukla": "^0.4.8",
     "npm-run-all": "^4.0.1",
     "nyc": "^10.0.0",
