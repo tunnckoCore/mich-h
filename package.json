@@ -5,7 +5,7 @@
   "repository": "tunnckoCore/mich-h",
   "author": "Charlike Mike Reagent <@tunnckoCore> (https://i.am.charlike.online)",
   "precommit.silent": true,
-  "main": "index.js",
+  "main": "dist/mich-h.min.js",
   "license": "MIT",
   "scripts": {
     "lint": "standard --fix --verbose",
