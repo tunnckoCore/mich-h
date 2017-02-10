@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/tunnckocore/mich-h/compare/v0.2.0...v0.2.1) (2017-02-10)
+
+
+### Bug Fixes
+
+* **readme:** add CodePen example, and CDN usage ([46c71e4](https://github.com/tunnckocore/mich-h/commit/46c71e4))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/tunnckocore/mich-h/compare/v0.1.7...v0.2.0) (2017-02-10)
 
