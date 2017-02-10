@@ -1,0 +1,102 @@
+{
+  "name": "mich-h",
+  "version": "0.1.0",
+  "description": "Create HAST-compliant virtual trees of HTML using [hyperscript][] compatible syntax, just in ~550 bytes.",
+  "repository": "tunnckoCore/mich-h",
+  "author": "Charlike Mike Reagent <@tunnckoCore> (https://i.am.charlike.online)",
+  "precommit.silent": true,
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "standard --fix --verbose",
+    "test": "npm-run-all -s test:*",
+    "test:api": "nyc --reporter lcov node test.js",
+    "test:report": "nyc report",
+    "prerelease": "npm test",
+    "release": "standard-version --sign --no-verify",
+    "git": "npm-run-all -s git:*",
+    "git:add": "git add --all",
+    "git:cz": "git-cz",
+    "commit": "npm-run-all -s test build git",
+    "build": "npm-run-all -s build:*",
+    "build:clean": "rimraf dist",
+    "build:bundle": "rollup -c",
+    "build:show": "ls -al dist"
+  },
+  "dependencies": {
+    "mich-parse-selector": "^1.0.2"
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.2",
+    "cz-conventional-changelog": "^1.2.0",
+    "mukla": "^0.4.8",
+    "npm-run-all": "^4.0.1",
+    "nyc": "^10.0.0",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.5.4",
+    "rollup": "^0.41.4",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-plugin-zopfli": "^1.0.2",
+    "standard": "^8.6.0",
+    "standard-version": "^4.0.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">=4",
+    "npm": ">=2"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "statements": 0,
+    "functions": 0,
+    "branches": 0,
+    "lines": 0
+  },
+  "verb": {
+    "run": true,
+    "toc": true,
+    "layout": "empty",
+    "tasks": [
+      "readme"
+    ],
+    "related": {
+      "list": [
+        "hyperscript",
+        "hastscript",
+        "virtual-dom",
+        "mich-parse-selector",
+        "virtual-html",
+        "rehype",
+        "reshape",
+        "posthtml"
+      ],
+      "highlight": "hyperscript"
+    },
+    "reflinks": [
+      "always-done",
+      "async-done",
+      "base",
+      "charlike",
+      "commitizen",
+      "dezalgo",
+      "hyperscript",
+      "once",
+      "standard-version",
+      "verb",
+      "verb-generate-readme"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}
