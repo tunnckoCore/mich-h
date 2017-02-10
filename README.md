@@ -1,5 +1,7 @@
 # mich-h [![NPM version](https://img.shields.io/npm/v/mich-h.svg?style=flat)](https://www.npmjs.com/package/mich-h) [![NPM monthly downloads](https://img.shields.io/npm/dm/mich-h.svg?style=flat)](https://npmjs.org/package/mich-h) [![npm total downloads][downloads-img]][downloads-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tunnckoCore/mich-h.svg)](https://greenkeeper.io/)
+
 > Create HAST-compliant virtual trees of HTML using [hyperscript][] compatible syntax, just in ~550 bytes.
 
 [![codeclimate][codeclimate-img]][codeclimate-url] 
