@@ -41,7 +41,30 @@ $ yarn add mich-h
 > For more use-cases see the [tests](test.js)
 
 ```js
-const michH = require('mich-h')
+const h = require('mich-h')
+
+const tree = h('div#page',
+  h('#header', // if tag name is not given, defaults to `div`
+    h('h1.classy', { style: 'background-color: #333; color: purple' })),
+  h('nav#menu', { style: {'background': '#2f2'} },
+    h('ul',
+      h('li', 'one'),
+      h('li.sec', 'two'),
+      h('li', 'three'))),
+  h('h2#title', 'content title',  { style: {'background-color': 'red'} }),
+  h('p.first', // classes of that `p` would be `first, foobie, quxie`
+    { className: 'foobie' },
+    "so it's just like a templating engine,\n",
+    { class: 'quxie' },
+    "but easy to use inline with javascript\n",
+    { onclick: () => {} }
+  ),
+  h('p',
+    "the intention is for this to be used to create\n",
+    h('strong', 'charlike', { style: 'background: white; color: green' }),
+    " reusable, interactive html widgets. "))
+
+console.log(tree)
 ```
 
 ## API
