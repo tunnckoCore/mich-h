@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.6"></a>
+## [0.1.6](https://github.com/tunnckocore/mich-h/compare/v0.1.5...v0.1.6) (2017-02-10)
+
+
+### Bug Fixes
+
+* **index.js:** ensure arg is object not "null" ([885d292](https://github.com/tunnckocore/mich-h/commit/885d292))
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/tunnckocore/mich-h/compare/v0.1.4...v0.1.5) (2017-02-10)
 
