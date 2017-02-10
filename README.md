@@ -57,6 +57,7 @@ then access `mich-h` through the `michH` global property - notice the uppercased
 
   console.log(node.properties.id)
   // => home
+
   console.log(node.properties.className)
   // => [ 'hero', 'big' ]
 
@@ -82,10 +83,9 @@ const tree = h('div#page',
       h('li.sec', 'two'),
       h('li', 'three'))),
   h('h2#title', 'content title',  { style: {'background-color': 'red'} }),
-  h('p.first', // classes of that `p` would be `first, foobie, quxie`
+  h('p.first', // classes of that `p` would be `first, foobie`
     { className: 'foobie' },
     "so it's just like a templating engine,\n",
-    { class: 'quxie' },
     "but easy to use inline with javascript\n",
     { onclick: () => {} }
   ),
@@ -115,7 +115,7 @@ const tree = <div id="page">
     </ul>
   </nav>
   <h2 id="title" style="background-color: red;">content title</h2>
-  <p class="first foobie quxie">so it's just like a templating engine,
+  <p class="first foobie">so it's just like a templating engine,
   but easy to use inline with javascript</p>
   <p>the intention is for this to be usedto create <strong>charlike</strong>
   reusable, interactive html widgets.</p>
