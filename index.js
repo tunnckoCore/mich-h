@@ -35,7 +35,7 @@ module.exports = function michH (selector, properties, children) {
 
   if (component) {
     node.properties.children = node.children
-    return selector(node.properties, node.children)
+    return selector(node.properties)
   }
 
   return node
