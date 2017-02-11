@@ -50,9 +50,9 @@ var ast = h('div#page.foo.bar.qux', { className: 'ok fool' },
  * Example Components
  */
 
-var Foo = function ({ name, last, children }) {
-  return h('user', { name: name }, children.map(function (child) {
-    child.properties.last = last
+var Foo = function (props) {
+  return h('user', { name: props.name }, props.children.map(function (child) {
+    child.properties.last = props.last
     return child
   }))
 }
