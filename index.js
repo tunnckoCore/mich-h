@@ -52,19 +52,15 @@ function addChild (nodes, children) {
   nodes.push(children)
 }
 
-function arrayify (val) {
-  return !val ? [] : (Array.isArray(val) ? val : [val])
-}
-
 function addProperty (props, key, value) {
   if (key === 'style' && value && typeof value === 'object') {
     for (var prop in value) {
-      props.style[prop] = value[prop]
+      (props.style || {})[prop] = value[prop]
     }
   }
   if (key === 'className') {
     value = typeof value === 'string' ? value.split(' ') : value
-    props[key] = arrayify(props[key]).concat(value)
+    props[key] = (props[key] || []).concat(value)
   } else {
     props[key] = value
   }
