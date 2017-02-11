@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/tunnckocore/mich-h/compare/v0.3.0...v0.3.1) (2017-02-11)
+
+
+### Bug Fixes
+
+* **index:** better defaults ([8a08004](https://github.com/tunnckocore/mich-h/commit/8a08004))
+* **index.js:** save some bytes ([35d0a54](https://github.com/tunnckocore/mich-h/commit/35d0a54))
+* **node:** make node 4 happy - remove destruction ([3e8ae97](https://github.com/tunnckocore/mich-h/commit/3e8ae97))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/tunnckocore/mich-h/compare/v0.2.3...v0.3.0) (2017-02-10)
 
