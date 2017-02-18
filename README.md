@@ -13,6 +13,18 @@ _You might also be interested in [hyperscript][] - a builder for real dom elemen
 
 **[JSX CodePen Example](http://codepen.io/tunnckoCore/pen/xgQKzr?editors=0010)**
 
+## Highlights
+- **Tiny:** Very lightweight, ~600 bytes gzip + minify and the UMD wrapper.
+- **Defaults:** Sane defaults and tiny css selector parser.
+- **Components:** Can be used to create Stateless or Statefull Components.
+- **Specificaition:** Creates [HAST](https://github.com/syntax-tree/hast)-compliant AST trees.
+- **Customization:** Supports [JSX](), custom tags and attributes.
+- **Minimalist:** Really, just a builder of AST trees.
+- **Compatibility:** Same as [hyperscript][], but creates virtual DOM.
+- **Bundled:** Available as ES6 Module, CommonJS, UMD or Browserify.
+- **SSR:** Supports server-side rendering through [mich-to-html][].
+- **Clean:** Does not mess with DOM or anything.
+
 ## Table of Contents
 - [Install](#install)
 - [Usage](#usage)
@@ -52,17 +64,7 @@ then access `mich-h` through the `michH` global property - notice the uppercased
   const h = michH
   const node = h('h1.hero#home.big', 'Hello World')
 
-  console.log(node.tagName)
-  // => h1
-
-  console.log(node.properties.id)
-  // => home
-
-  console.log(node.properties.className)
-  // => [ 'hero', 'big' ]
-
-  console.log(node.children[0])
-  // => { type: 'text', value: 'Hello World' }
+  console.log(node)
 </script>
 ```
 
@@ -74,54 +76,64 @@ then access `mich-h` through the `michH` global property - notice the uppercased
 ```js
 const h = require('mich-h')
 
-const tree = h('div#page',
-  h('#header', // if tag name is not given, defaults to `div`
-    h('h1.classy', { style: 'background-color: #333; color: purple' })),
-  h('nav#menu', { style: {'background': '#2f2'} },
-    h('ul',
-      h('li', 'one'),
-      h('li.sec', 'two'),
-      h('li', 'three'))),
+const ast = h('div#page.foo.bar.qux', { className: 'ok fool' },
+  h('#header',
+    h('h1.classy', 'hello', { style: 'background-color: #333; color: purple' })),
+  h('nav#menu', { style: {'background': '#2f2', 'font-size': '12px' } },
+    h('ul', [
+      h('li', 'one', { dataset: { foo: 'bar', set: 'ok' } }),
+      h('li.sec', 'two', { className: ['huh'] }),
+      h('li', 'three')
+    ])),
   h('h2#title', 'content title',  { style: {'background-color': 'red'} }),
-  h('p.first', // classes of that `p` would be `first, foobie`
+  h('p.first',
+    'so it is just like a templating engine,\n',
     { className: 'foobie' },
-    "so it's just like a templating engine,\n",
-    "but easy to use inline with javascript\n",
-    { onclick: () => {} }
-  ),
+    'but easy to use inline with javascript',
+    { onclick: () => {} }),
   h('p',
-    "the intention is for this to be used to create\n",
-    h('strong', 'charlike', { style: 'background: white; color: green' }),
-    " reusable, interactive html widgets. "))
+    { className: 'lastParagraph' },
+    'the intention is for this to be used to create\n',
+    h('strong', 'charlike', {
+      className: ['bold'],
+      style: 'background: white; color: green'
+    }),
+    ' reusable, interactive html widgets.'))
 
-console.log(tree)
+console.log(ast)
 ```
 
-Or using it with modern JSX syntax, adding [JSX Pragma](https://jasonformat.com/wtf-is-jsx/) somewhere at the top
+Or with modern JSX syntax, adding [JSX Pragma](https://jasonformat.com/wtf-is-jsx/) somewhere at the top and using some transpiler - Rollup, Webpack or Babel with [babel-plugin-transform-react-jsx][].
 
-```jsx
+```js
 /** @jsx h */
 const h = require('mich-h')
 
-const tree = <div id="page">
+const onclick = (e) => console.log('hooray it is clicked!')
+const list = <ul>
+  <li data-foo="bar" data-set="ok">one</li>
+  <li className="sec huh">two</li>
+  <li>three</li>
+</ul>
+
+const ast = <div id="page" className="foo bar qux ok fool">
   <div id="header">
-    <h1 class="classy" style="background-color: #333; color: purple"></h1>
+    <h1 className="classy" style="background-color: #333; color: purple">hello</h1>
   </div>
-  <nav id="menu" style="background: #2f2;">
-    <ul>
-      <li>one</li>
-      <li class="sec">two</li>
-      <li>three</li>
-    </ul>
+  <nav id="menu" style="background: #2f2;font-size: 12px;">
+    {list}
   </nav>
   <h2 id="title" style="background-color: red;">content title</h2>
-  <p class="first foobie">so it's just like a templating engine,
-  but easy to use inline with javascript</p>
-  <p>the intention is for this to be usedto create <strong>charlike</strong>
-  reusable, interactive html widgets.</p>
+  <p className="first foobie" onclick={onclick}>so it is just like a templating engine,
+    but easy to use inline with javascript
+  </p>
+  <p className="lastParagraph">the intention is for this to be used to create
+    <strong className="bold" style="background: white; color: green">charlike </strong>
+    reusable, interactive html widgets.
+  </p>
 </div>
 
-console.log(tree)
+console.log(ast)
 ```
 
 **Examples:**
@@ -188,23 +200,13 @@ _Project scaffolded using [charlike][] cli._
 
 [always-done]: https://github.com/hybridables/always-done
 [async-done]: https://github.com/gulpjs/async-done
+[babel-plugin-transform-react-jsx]: https://github.com/babel/babel
 [base]: https://github.com/node-base/base
 [charlike]: https://github.com/tunnckocore/charlike
 [commitizen]: https://github.com/commitizen/cz-cli
 [dezalgo]: https://github.com/npm/dezalgo
 [hyperscript]: https://github.com/dominictarr/hyperscript
-[once]: https://github.com/isaacs/once
-[standard-version]: https://github.com/conventional-changelog/standard-version
-[verb-generate-readme]: https://github.com/verbose/verb-generate-readme
-[verb]: https://github.com/verbose/verb
-
-[always-done]: https://github.com/hybridables/always-done
-[async-done]: https://github.com/gulpjs/async-done
-[base]: https://github.com/node-base/base
-[charlike]: https://github.com/tunnckocore/charlike
-[commitizen]: https://github.com/commitizen/cz-cli
-[dezalgo]: https://github.com/npm/dezalgo
-[hyperscript]: https://github.com/dominictarr/hyperscript
+[mich-to-html]: https://github.com/tunnckocore/mich-to-html
 [once]: https://github.com/isaacs/once
 [standard-version]: https://github.com/conventional-changelog/standard-version
 [verb-generate-readme]: https://github.com/verbose/verb-generate-readme

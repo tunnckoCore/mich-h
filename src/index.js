@@ -71,4 +71,3 @@ function addProperty (props, key, value) {
     props[key] = value
   }
 }
-

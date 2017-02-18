@@ -103,7 +103,9 @@
       "once",
       "standard-version",
       "verb",
-      "verb-generate-readme"
+      "verb-generate-readme",
+      "babel-plugin-transform-react-jsx",
+      "mich-to-html"
     ],
     "lint": {
       "reflinks": true
