@@ -8,7 +8,6 @@ components
 vendor
 build
 dest
-src
 lib-cov
 coverage
 nbproject
