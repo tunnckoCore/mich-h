@@ -1,3 +1,9 @@
+'use strict';
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var parseSelector = _interopDefault(require('mich-parse-selector'));
+
 /*!
  * mich-h <https://github.com/tunnckoCore/mich-h>
  *
@@ -5,33 +11,29 @@
  * Released under the MIT license.
  */
 
-'use strict'
-
-var parseSelector = require('mich-parse-selector')
-
-module.exports = function michH (selector) {
-  var isComponent = typeof selector === 'function'
-  var node = isComponent ? parseSelector() : parseSelector(selector)
-  var args = [].slice.call(arguments, 1)
+function michH (selector) {
+  var isComponent = typeof selector === 'function';
+  var node = isComponent ? parseSelector() : parseSelector(selector);
+  var args = [].slice.call(arguments, 1);
 
   function item (arg) {
     if (arg) {
       if (arg.map) {
         while (arg.length) {
-          addChild(node.children, arg.shift())
+          addChild(node.children, arg.shift());
         }
       } else if (typeof arg === 'object' && !isNode(arg)) {
         for (var prop in arg) {
-          addProperty(node.properties, prop, arg[prop])
+          addProperty(node.properties, prop, arg[prop]);
         }
       } else {
-        addChild(node.children, arg)
+        addChild(node.children, arg);
       }
     }
   }
 
   while (args.length) {
-    item(args.shift())
+    item(args.shift());
   }
 
   if (isComponent) {
@@ -50,26 +52,28 @@ function isNode (val) {
 }
 
 function addChild (nodes, children) {
-  var type = typeof children
+  var type = typeof children;
   if (type === 'string' || type === 'number') {
     children = {
       type: 'text',
       value: children + ''
-    }
+    };
   }
-  nodes.push(children)
+  nodes.push(children);
 }
 
 function addProperty (props, key, value) {
   if (key === 'style' && value && typeof value === 'object') {
     for (var prop in value) {
-      (props.style || {})[prop] = value[prop]
+      (props.style || {})[prop] = value[prop];
     }
   }
   if (key === 'className') {
-    value = typeof value === 'string' ? value.split(' ') : value
-    props[key] = (props[key] || []).concat(value)
+    value = typeof value === 'string' ? value.split(' ') : value;
+    props[key] = (props[key] || []).concat(value);
   } else {
-    props[key] = value
+    props[key] = value;
   }
 }
+
+module.exports = michH;

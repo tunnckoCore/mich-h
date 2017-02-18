@@ -5,7 +5,9 @@
   "repository": "tunnckoCore/mich-h",
   "author": "Charlike Mike Reagent <@tunnckoCore> (https://i.am.charlike.online)",
   "precommit.silent": true,
-  "main": "dist/mich-h.min.js",
+  "jsnext:main": "dist/mich-h.es.js",
+  "module": "dist/mich-h.es.js",
+  "main": "dist/mich-h.common.js",
   "license": "MIT",
   "scripts": {
     "lint": "standard --fix --verbose",
@@ -20,20 +22,23 @@
     "commit": "npm-run-all -s test build git",
     "build": "npm-run-all -s build:*",
     "build:clean": "rimraf dist",
-    "build:bundle": "rollup -c",
+    "build:browser": "rollup -c --environment BROWSER",
+    "build:node": "rollup -c --environment NODE",
     "build:show": "ls -al dist"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mich-parse-selector": "^1.0.2"
+  },
   "devDependencies": {
     "commitizen": "^2.9.2",
     "cz-conventional-changelog": "^1.2.0",
-    "mich-parse-selector": "^1.0.2",
     "mukla": "^0.4.8",
     "npm-run-all": "^4.0.1",
     "nyc": "^10.0.0",
     "pre-commit": "^1.2.2",
     "rimraf": "^2.5.4",
     "rollup": "^0.41.4",
+    "rollup-plugin-buble": "^0.15.0",
     "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-uglify": "^1.0.1",

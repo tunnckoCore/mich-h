@@ -10,13 +10,12 @@
 'use strict'
 
 const test = require('mukla')
-const h = require('./index')
+const h = require('./dist/mich-h.common.js')
 
 test('mich-h', (done) => {
   h()
   done()
 })
-
 
 // var ast = h('div#page.foo.bar.qux', { className: 'ok fool' },
 //   h('#header', // if tag name is not given, defaults to `div`
