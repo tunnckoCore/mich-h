@@ -82,11 +82,15 @@ const ast = h('div#page.foo.bar.qux', { className: 'ok fool' },
     h('h1.classy', 'hello', { style: 'background-color: #333; color: purple' })),
   h('nav#menu', { style: {'background': '#2f2', 'font-size': '12px' } },
     h('ul', [
-      h('li', 'one', { dataset: { foo: 'bar', set: 'ok' } }),
+      // notice `dataset` and `data-zaz`
+      // both will be set to `properties.dataset`
+      h('li', 'one', { dataset: { foo: 'bar', qux: 'ok' }, 'data-zaz': 'huh' }),
       h('li.sec', 'two', { className: ['huh'] }),
-      h('li', 'three')
+      h('li', { 'data-foo': 'hi' }, 'three')
     ])),
   h('h2#title', 'content title',  { style: {'background-color': 'red'} }),
+  // notice `.first` and `className: 'foobie'`
+  // both will be set in `properties.className` array 
   h('p.first',
     'so it is just like a templating engine,\n',
     { className: 'foobie' },
@@ -112,9 +116,9 @@ const h = require('mich-h')
 
 const onclick = (e) => console.log('hooray it is clicked!')
 const list = <ul>
-  <li data-foo="bar" data-set="ok">one</li>
+  <li dataset={{ foo: 'bar', qux: 'ok' }} data-zaz="huh">one</li>
   <li className="sec huh">two</li>
-  <li>three</li>
+  <li data-foo="hi">three</li>
 </ul>
 
 const ast = <div id="page" className="foo bar qux ok fool">

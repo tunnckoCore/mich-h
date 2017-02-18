@@ -60,13 +60,18 @@ function addChild (nodes, children) {
 
 function addProperty (props, key, value) {
   if (key === 'style' && value && typeof value === 'object') {
-    for (var prop in value) {
-      (props.style || {})[prop] = value[prop];
+    props.style = props.style || {};
+    for (var k in value) {
+      props.style[k] = value[k];
     }
   }
+
   if (key === 'className') {
     value = typeof value === 'string' ? value.split(' ') : value;
     props[key] = (props[key] || []).concat(value);
+  } else if (key.slice(0, 5) === 'data-') {
+    props.dataset = props.dataset || {};
+    props.dataset[key.slice(5)] = value;
   } else {
     props[key] = value;
   }
