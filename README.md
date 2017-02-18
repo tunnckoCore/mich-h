@@ -21,7 +21,8 @@ _You might also be interested in [hyperscript][] - a builder for real dom elemen
 - **Customization:** Supports [JSX](), custom tags and attributes.
 - **Minimalist:** Really, just a builder of AST trees.
 - **Compatibility:** Same as [hyperscript][], but creates virtual DOM.
-- **Bundled:** Available as ES6 Module, CommonJS, UMD or Browserify.
+- **Friendly:** Plays well with [browserify][] users.
+- **Bundled:** Available as ES6 Module, CommonJS, UMD.
 - **SSR:** Supports server-side rendering through [mich-to-html][].
 - **Clean:** Does not mess with DOM or anything.
 
@@ -233,3 +234,4 @@ _Project scaffolded using [charlike][] cli._
 [standard-url]: https://github.com/feross/standard
 [standard-img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 
+[browserify]: https://github.com/substack/node-browserify
