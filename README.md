@@ -1,6 +1,6 @@
 # mich-h [![NPM version](https://img.shields.io/npm/v/mich-h.svg?style=flat)](https://www.npmjs.com/package/mich-h) [![NPM monthly downloads](https://img.shields.io/npm/dm/mich-h.svg?style=flat)](https://npmjs.org/package/mich-h) [![npm total downloads][downloads-img]][downloads-url]
 
-> Create [HAST](https://github.com/syntax-tree/hast)-compliant virtual dom trees of HTML using [hyperscript][] compatible syntax or JSX, just in ~550 bytes.
+> Create [HAST](https://github.com/syntax-tree/hast)-compliant virtual dom trees of HTML using [hyperscript][] compatible syntax or JSX, just in ~570 bytes.
 
 [![codeclimate][codeclimate-img]][codeclimate-url] 
 [![codestyle][standard-img]][standard-url] 

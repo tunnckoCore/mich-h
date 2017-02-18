@@ -1,7 +1,7 @@
 {
   "name": "mich-h",
   "version": "0.3.1",
-  "description": "Create HAST-compliant virtual dom trees of HTML using hyperscript compatible syntax or JSX, just in ~540 bytes.",
+  "description": "Create HAST-compliant virtual dom trees of HTML using hyperscript compatible syntax or JSX, just in ~570 bytes.",
   "repository": "tunnckoCore/mich-h",
   "author": "Charlike Mike Reagent <@tunnckoCore> (https://i.am.charlike.online)",
   "precommit.silent": true,
