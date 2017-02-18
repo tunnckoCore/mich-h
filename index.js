@@ -9,23 +9,24 @@
 
 var parseSelector = require('mich-parse-selector')
 
-module.exports = function michH (selector, properties, children) {
-  var component = typeof selector === 'function'
-  var node = component ? parseSelector() : parseSelector(selector)
-
+module.exports = function michH (selector) {
+  var isComponent = typeof selector === 'function'
+  var node = isComponent ? parseSelector() : parseSelector(selector)
   var args = [].slice.call(arguments, 1)
 
   function item (arg) {
-    if (Array.isArray(arg)) {
-      arg.forEach(function (val) {
-        addChild(node.children, val)
-      })
-    } else if (arg && typeof arg === 'object' && !('type' in arg)) {
-      for (var prop in arg) {
-        addProperty(node.properties, prop, arg[prop])
+    if (arg) {
+      if (arg.map) {
+        while (arg.length) {
+          addChild(node.children, arg.shift())
+        }
+      } else if (typeof arg === 'object' && !isNode(arg)) {
+        for (var prop in arg) {
+          addProperty(node.properties, prop, arg[prop])
+        }
+      } else {
+        addChild(node.children, arg)
       }
-    } else {
-      addChild(node.children, arg)
     }
   }
 
@@ -33,12 +34,19 @@ module.exports = function michH (selector, properties, children) {
     item(args.shift())
   }
 
-  if (component) {
-    node.properties.children = node.children
-    return selector(node.properties)
+  if (isComponent) {
+    return selector(node.properties, node.children)
   }
 
   return node
+}
+
+function isNode (val) {
+  return val.tagName &&
+    val.properties &&
+    typeof val.properties === 'object' &&
+    Array.isArray(val.children) &&
+    val.type === 'element'
 }
 
 function addChild (nodes, children) {
@@ -46,7 +54,7 @@ function addChild (nodes, children) {
   if (type === 'string' || type === 'number') {
     children = {
       type: 'text',
-      value: String(children)
+      value: children + ''
     }
   }
   nodes.push(children)
