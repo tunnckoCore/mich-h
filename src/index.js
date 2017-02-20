@@ -7,11 +7,6 @@
 
 import parseSelector from 'mich-parse-selector'
 
-var promise = Promise.resolve(123)
-promise.then(() => {
-  console.log('actual')
-})
-
 /**
  * > Virtual DOM builder that is compatible to [hyperscript][],
  * so it takes any number of arguments that can be string,

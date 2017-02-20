@@ -153,7 +153,7 @@ console.log(ast)
 
 ## API
 
-### [michH](src/index.js#L57)
+### [michH](src/index.js#L52)
 > Virtual DOM builder that is compatible to [hyperscript][], so it takes any number of arguments that can be string, object, or array. But the first one `selector` always should be a simple css-like selector supported by [mich-parse-selector][]. For example `.foo.bar` creates a node with tag name `div` and classes `foo bar`. Or selector like `p.foo#hero.bar` creates a node with id `hero`, classes `foo` and `bar`, and tag name `p`.
 
 **Params**
