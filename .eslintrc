@@ -1,3 +1,4 @@
 {
-  "extends": "standard"
+  "extends": ["charlike"],
+  "plugins": ["charlike"]
 }

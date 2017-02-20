@@ -10,7 +10,7 @@
   "main": "dist/mich-h.common.js",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src/ test.js --fix",
+    "lint": "standard **/*.js --fix --verbose",
     "test": "npm-run-all -s lint test:*",
     "test:api": "nyc --reporter lcov node test.js",
     "test:report": "nyc report",
@@ -32,10 +32,6 @@
   "devDependencies": {
     "commitizen": "^2.9.2",
     "cz-conventional-changelog": "^1.2.0",
-    "eslint": "^3.15.0",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.2",
-    "eslint-plugin-standard": "^2.0.1",
     "mukla": "^0.4.8",
     "npm-run-all": "^4.0.1",
     "nyc": "^10.0.0",
@@ -47,6 +43,7 @@
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-uglify": "^1.0.1",
     "rollup-plugin-zopfli": "^1.0.2",
+    "standard": "^8.6.0",
     "standard-version": "^4.0.0"
   },
   "files": [
@@ -62,9 +59,6 @@
     "node": ">=4",
     "npm": ">=2"
   },
-  "eslintConfig": {
-    "extends": "standard"
-  },
   "nyc": {
     "check-coverage": true,
     "statements": 0,
@@ -72,9 +66,18 @@
     "branches": 0,
     "lines": 0
   },
+  "standard": {
+    "ignore": [
+      "dist/**"
+    ]
+  },
   "verb": {
     "run": true,
-    "toc": true,
+    "toc": {
+      "render": true,
+      "method": "preWrite",
+      "maxdepth": 3
+    },
     "layout": "empty",
     "tasks": [
       "readme"
@@ -95,17 +98,19 @@
     "reflinks": [
       "always-done",
       "async-done",
+      "babel-plugin-transform-react-jsx",
       "base",
       "charlike",
       "commitizen",
       "dezalgo",
       "hyperscript",
+      "mich-to-html",
       "once",
       "standard-version",
       "verb",
       "verb-generate-readme",
-      "babel-plugin-transform-react-jsx",
-      "mich-to-html"
+      "browserify",
+      "mich-parse-selector"
     ],
     "lint": {
       "reflinks": true

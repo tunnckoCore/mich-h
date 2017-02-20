@@ -7,6 +7,53 @@ import parseSelector from 'mich-parse-selector';
  * Released under the MIT license.
  */
 
+var promise = Promise.resolve(123);
+promise.then(() => {
+  console.log('actual');
+});
+
+/**
+ * > Virtual DOM builder that is compatible to [hyperscript][],
+ * so it takes any number of arguments that can be string,
+ * object, or array. But the first one `selector` always should
+ * be a simple css-like selector supported by [mich-parse-selector][].
+ * For example `.foo.bar` creates a node with tag name `div`
+ * and classes `foo bar`. Or selector like `p.foo#hero.bar` creates
+ * a node with id `hero`, classes `foo` and `bar`, and tag name `p`.
+ *
+ * **Example**
+ *
+ * ```js
+ * const h = require('mich-h')
+ *
+ * const node = h('a.foo#brand.bar.btn-large.xyz', {
+ *   className: 'btn'
+ *   href: 'https://i.am.charlike.online'
+ * }, 'Charlike Web')
+ *
+ * console.log(node.type) // => 'element'
+ * console.log(node.tagName) // => 'p'
+ * console.log(node.properties.id) // => 'brand'
+ *
+ * console.log(node.properties.href)
+ * // => 'https://i.am.charlike.online'
+ *
+ * console.log(node.properties.className)
+ * // => [ 'foo', 'bar', 'btn-large', 'xyz', 'btn' ]
+ *
+ * console.log(node.children.length) // => 1
+ * console.log(node.children[0])
+ * // => { type: 'text', value: 'Charlike Web' }
+ * ```
+ *
+ * @name   michH
+ * @param  {String} `selector` simple selector; supports IDs, classes and tag name only
+ * @param  {Object} `props` an attributes for the tag; can be in any position (i.e 4th)
+ * @param  {String|Array} `children` a child nodes; can be in any position (i.e. 2nd or 5th)
+ * @return {Object} a HAST compliant node
+ * @api public
+ */
+
 function michH (selector) {
   var isComponent = typeof selector === 'function';
   var node = isComponent ? parseSelector() : parseSelector(selector);
