@@ -2,11 +2,11 @@
 
 > Create [HAST](https://github.com/syntax-tree/hast)-compliant virtual dom trees of HTML using [hyperscript][] compatible syntax or JSX, just in ~570 bytes.
 
-[![codeclimate][codeclimate-img]][codeclimate-url] 
-[![codestyle][standard-img]][standard-url] 
-[![linux build][travis-img]][travis-url] 
-[![windows build][appveyor-img]][appveyor-url] 
-[![codecov][coverage-img]][coverage-url] 
+[![codeclimate][codeclimate-img]][codeclimate-url]
+[![codestyle][standard-img]][standard-url]
+[![linux build][travis-img]][travis-url]
+[![windows build][appveyor-img]][appveyor-url]
+[![codecov][coverage-img]][coverage-url]
 [![dependency status][david-img]][david-url]
 
 _You might also be interested in [hyperscript][] - a builder for real dom elements._
@@ -95,7 +95,7 @@ const ast = h('div#page.foo.bar.qux', { className: 'ok fool' },
     ])),
   h('h2#title', 'content title',  { style: {'background-color': 'red'} }),
   // notice `.first` and `className: 'foobie'`
-  // both will be set in `properties.className` array 
+  // both will be set in `properties.className` array
   h('p.first',
     'so it is just like a templating engine,\n',
     { className: 'foobie' },
@@ -248,7 +248,7 @@ console.log(node.properties.style)
 
 Using above approach you'll end up finally with a node that has a `properties.style` a string, because we don't parse the value. So what you pass, you'll get.
 
-If you pass an object, you'll have an object. Here in that example we'll use JSX, but it is the same as using the `h`-calls. 
+If you pass an object, you'll have an object. Here in that example we'll use JSX, but it is the same as using the `h`-calls.
 
 ```jsx
 const pTagStyle = {
@@ -355,4 +355,3 @@ _Project scaffolded using [charlike][] cli._
 
 [standard-url]: https://github.com/feross/standard
 [standard-img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
-
