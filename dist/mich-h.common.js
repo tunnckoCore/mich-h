@@ -79,7 +79,8 @@ function michH (selector) {
   }
 
   if (isComponent) {
-    return selector(node.properties, node.children)
+    node.properties.children = node.children;
+    return selector(node.properties, node.properties.children)
   }
 
   return node
