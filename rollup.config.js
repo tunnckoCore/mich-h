@@ -1,7 +1,7 @@
 'use strict'
 
 const buble = require('rollup-plugin-buble')
-const zopfli = require('rollup-plugin-zopfli')
+const gzip = require('rollup-plugin-gzip')
 const uglify = require('rollup-plugin-uglify')
 const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs')
@@ -30,7 +30,7 @@ if (process.env.BROWSER) {
         }
       }),
       uglify({ compress: { warnings: false } }),
-      zopfli({ options: { numiterations: 1000 } })
+      gzip()
     ]
   })
 } else {
