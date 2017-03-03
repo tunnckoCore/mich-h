@@ -10,7 +10,7 @@
   "main": "dist/mich-h.common.js",
   "license": "MIT",
   "scripts": {
-    "lint": "standard **/*.js --fix --verbose",
+    "lint": "standard test.js src/index.js --fix --verbose",
     "test": "npm-run-all -s lint test:*",
     "test:api": "nyc --reporter lcov node test.js",
     "test:report": "nyc report",
