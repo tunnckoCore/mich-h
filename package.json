@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "commitizen": "^2.9.2",
-    "cz-conventional-changelog": "^1.2.0",
+    "cz-conventional-changelog": "^2.0.0",
     "mukla": "^0.4.8",
     "npm-run-all": "^4.0.1",
     "nyc": "^10.0.0",
