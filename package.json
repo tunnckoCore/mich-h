@@ -42,8 +42,8 @@
     "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-gzip": "^1.0.0",
     "rollup-plugin-node-resolve": "^2.0.0",
+    "standard": "^10.0.0",
     "rollup-plugin-uglify": "^2.0.1",
-    "standard": "^9.0.2",
     "standard-version": "^4.0.0"
   },
   "files": [
